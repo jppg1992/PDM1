@@ -1,2 +1,2 @@
-projeto de exemplo para de crud.
-aula dia 13/11-2023
+projeto de exemplo utilizando camera e galeria de fotos.
+aula dia 20-11-2023
