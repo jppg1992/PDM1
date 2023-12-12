@@ -42,7 +42,7 @@ const ManterQuarto = () => {
 
   const salvar = async () => {
     if (formQuarto.id) {
-      const quarto = new Cliente(formQuarto);
+      const quarto = new Quarto(formQuarto);
       const result = await QuartoService.update(quarto);
       alert("Registro atualizado!");
       limparFormulario();

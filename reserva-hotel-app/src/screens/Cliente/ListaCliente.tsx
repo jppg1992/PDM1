@@ -72,10 +72,10 @@ const ListarClientes = () => {
 
             {/* // coloca alinhamento em coluna justificado flex-start */}
             <View style={styles.alinhamentoColuna}>
-              <Text style={styles.itemStyle}>{item.nome}</Text>
-              <Text style={styles.itemStyle}>{item.cpf} </Text>
-              <Text style={styles.itemStyle}>{item.endereco} </Text>
-              <Text style={styles.itemStyle}>{item.datanascimento} </Text>
+              <Text style={styles.itemStyle}>Nome: {item.nome}</Text>
+              <Text style={styles.itemStyle}>CPF: {item.cpf} </Text>
+              <Text style={styles.itemStyle}>End.:{item.endereco} </Text>
+              <Text style={styles.itemStyle}>Nasc.:{item.datanascimento} </Text>
 
               {/* fecha alinhamento colunas */}
             </View>

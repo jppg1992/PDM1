@@ -1,8 +1,8 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
-import { View, Text, Image, SafeAreaView, FlatList, StatusBar, TouchableOpacity } from "react-native";
-
-import styles from "../../../../styles";
+import {  StyleSheet,View, Text, Image, SafeAreaView, FlatList, StatusBar, TouchableOpacity } from "react-native";
+import styles from '../../../../styles.js'
+ 
 import * as Speech from "expo-speech";
 
 const DATA = [
@@ -48,11 +48,11 @@ const PagarReserva = () => {
   };
   const renderItemNovo = ({ item }) => {
     return (
-      <View style={styles.item} key={item.id}>
+      <View style={styled.item} key={item.id}>
         <TouchableOpacity style={styles.title} onPress={() => CliqueSimples(item)} onLongPress={() => CliqueLongo(item)}>
-          <View style={styles.detalheItem}>
-            <Image source={{ uri: item.imageUri }} style={styles.itemImage} />
-            <Text style={styles.buttonText}>{item.title}</Text>
+          <View style={styled.detalheItem}>
+            <Image source={{ uri: item.imageUri }} style={styled.itemImage} />
+            <Text style={styled.buttonText}>{item.title}</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -74,7 +74,7 @@ const PagarReserva = () => {
           {/* fecha alinhamento linhas */}
         </View>
       </View>
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styled.buttonContainer} >
         <FlatList data={DATA} renderItem={renderItemNovo} keyExtractor={(item) => item.id} />
       </SafeAreaView>
 
@@ -84,3 +84,46 @@ const PagarReserva = () => {
 };
 
 export default PagarReserva;
+
+const styled = StyleSheet.create({
+
+
+  itemStyle: {
+    fontSize: 14,
+    padding: 5,
+  },
+  buttonContainer: {
+   
+    paddingTop: 50,
+  },
+
+  buttonText: {
+    color: "white",
+    fontWeight: "700",
+    fontSize: 16,
+  },
+  item: {
+    backgroundColor: "#0782F9",
+    width: "100%",
+    padding: 10,
+    borderRadius: 10,
+    alignItems: "center",
+    marginTop: 2,
+  },
+  title: {
+    fontSize: 32,
+  },
+  itemImage: {
+    width: 32,
+    height: 32,
+    marginLeft: 4,
+    marginRight: 8,
+    backgroundColor: "#eee",
+    borderRadius: 40,
+    elevation: 2,
+  },
+  detalheItem: {
+    display: "flex",
+    flexDirection: "row",
+  },
+})

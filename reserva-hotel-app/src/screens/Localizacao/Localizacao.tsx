@@ -1,17 +1,19 @@
 import React from "react";
 import MapView from "react-native-maps";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View,Text } from "react-native";
 import { Marker } from "react-native-maps";
 
 export default function Localizacao() {
   return (
+    <View style={styles.container}>
+      <Text style={styles.texto}> Hotel Lager</Text>
     <MapView
       style={styles.map}
       initialRegion={{
         latitude: -31.33036476513109,
         longitude: -54.10718015146392,
-        latitudeDelta: 0.9,
-        longitudeDelta: 0.9,
+        latitudeDelta: 1.2,
+        longitudeDelta: 1.2,
       }}
     >
       <Marker
@@ -41,12 +43,28 @@ export default function Localizacao() {
         description={"Nossa filial em Hulhe Negra"}
       ></Marker>
     </MapView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   map: {
+    marginTop:5,
     width: "100%",
-    height: "100%",
+    height: "85%",
   },
+
+  texto:{
+    width: "100%",
+    height: "10%",
+    backgroundColor: "#0782F9",
+    color: "#FFFFFF",
+    textAlign: "center", 
+    paddingTop:5,
+    fontSize:35
+  },
+  container:{
+    backgroundColor: "#FFFFFF",
+    height: "100%",
+  }
 });
